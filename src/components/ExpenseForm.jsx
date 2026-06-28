@@ -1,18 +1,39 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export default function ExpenseForm({addExpense}){
+export default function ExpenseForm({addExpense,updateExpense,editExpense,setEditExpense}){
     const [title,setTitle]=useState("");
     const [amount,setAmount]=useState("");
+
+    useEffect(()=>{
+        if(editExpense){
+            setTitle(editExpense.title);
+            setAmount(editExpense.amount);
+        }
+    },[editExpense])
 
     function handleSubmit(e){
         e.preventDefault();
 
+        if(title.trim()===""){
+            alert("please enter title");
+            return;
+        }
+        if(amount==="" || Number(amount) <= 0){
+            alert("please enter a valid amount");
+            return;
+        }
+
         const expense={
-            id:Date.now(),
+            id:editExpense ? editExpense.id :Date.now(),
             title:title,
             amount:Number(amount)
         };
-        addExpense(expense);
+        if(editExpense){
+            updateExpense(expense);
+        }
+        else{
+            addExpense(expense);
+        }
 
         setTitle("");
         setAmount("");
@@ -29,7 +50,7 @@ export default function ExpenseForm({addExpense}){
         <label className="form-label">Amount</label>
         <input className="form-control" type="number" placeholder="Enter Amount" value={amount} onChange={(e)=>setAmount(e.target.value)}/>
             </div>
-        <button className="btn btn-primary" type="submit">Add Expense</button>
+        <button className="btn btn-primary" type="submit">{editExpense ? "Update Expense" : "Add Expense"}</button>
         </form>
     );
 }

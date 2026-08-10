@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import ExpenseSummary from "./components/ExpenseSummary";
 
 export default function App() {
   const [searchTerm,setSearchTerm]=useState("");
@@ -78,6 +79,8 @@ export default function App() {
       <h1 className="text-center mb-4">Expense Tracker</h1>
 
       <ExpenseForm addExpense={addExpense} updateExpense={updateExpense} editExpense={editExpense} setEditExpense={setEditExpense} />
+
+      <ExpenseSummary expenses={expenses} />
 
       <div className="d-flex gap-3">
       <input type="text" className="form-control mb-3 w-75" placeholder="Search expenses..." value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} />

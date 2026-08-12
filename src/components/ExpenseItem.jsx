@@ -1,4 +1,6 @@
-export default function ExpenseItem({expense,deleteExpense,editingExpense}){
+import React from "react";
+
+function ExpenseItem({expense,deleteExpense,editingExpense}){
     return(
         <div className="card mb-2 shadow-sm">
             <div className="card-body d-flex justify-content-between">
@@ -14,3 +16,5 @@ export default function ExpenseItem({expense,deleteExpense,editingExpense}){
         </div>
     );
 }
+
+export default React.memo(ExpenseItem)

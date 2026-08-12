@@ -41,7 +41,7 @@ export default function App() {
         expense.id === updatedExpense.id ? updatedExpense : expense);
     })
     setEditExpense(null);
-  }
+  };
 
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expenses));
@@ -95,7 +95,7 @@ export default function App() {
     <div className={`container mt-5 ${darkMode ? "dark-mode" : ""}`}>
       <h1 className="text-center mb-4">Expense Tracker</h1>
 
-      <button className="btn btn-outline-secondary mb-3" onClick={() => setDarkMode(!darkMode)}>
+      <button className="btn btn-outline-secondary mb-3" onClick={() => setDarkMode(prev=>!prev)}>
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
 

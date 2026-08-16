@@ -95,7 +95,7 @@ export default function App() {
     <div className={`container mt-5 ${darkMode ? "dark-mode" : ""}`}>
       <h1 className="text-center mb-4">Expense Tracker</h1>
 
-      <button className="btn btn-outline-secondary mb-3" onClick={() => setDarkMode(prev=>!prev)}>
+      <button className="btn btn-outline-secondary mb-4" onClick={() => setDarkMode(prev=>!prev)}>
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
 
@@ -103,10 +103,12 @@ export default function App() {
 
       <ExpenseSummary expenses={expenses} />
 
-      <div className="d-flex gap-3">
-        <input type="text" className="form-control mb-3 w-75" placeholder="Search expenses..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <div className="row g-3 mb-3">
+        <div className="col-12 col-md-8">
+        <input type="text" className="form-control" placeholder="Search expenses..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+        </div>
 
-        <div className="mb-3 w-25">
+        <div className="col-12 col-md-4">
           <select className="form-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="newest">Newest First</option>
             <option value="oldest">Oldest First</option>

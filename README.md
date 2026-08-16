@@ -1,16 +1,76 @@
-# React + Vite
+# 💰 Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive Expense Tracker built with React and Bootstrap that allows users to manage and track their daily expenses.
 
-Currently, two official plugins are available:
+## 📸 Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 💻 Dashboard
 
-## React Compiler
+(./screenshots/dashboard.png)
+(./screenshots/expenseDetails.png)
+(./screenshots/filter.png)
+(./screenshots/sorting.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🌙 Dark Mode
 
-## Expanding the Oxlint configuration
+(./screenshots/darkMode.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 📱 Mobile View
+
+(./screenshots/responsive.png)
+(./screenshots/responsive2.png)
+
+## 🚀 Features
+
+- Add new expenses
+- Edit existing expenses
+- Delete expenses
+- Expense summary
+  - Total Expenses
+  - Total Amount
+  - Highest Expense
+  - Average Expense
+- Search expenses
+- Sort expenses
+  - Newest First
+  - Oldest First
+  - Amount Low → High
+  - Amount High → Low
+  - Title A → Z
+  - Title Z → A
+- LocalStorage persistence
+- Dark Mode
+- Form validation
+- Error Boundary
+- Empty State UI
+- Responsive design
+- Auto-focus on title input after adding an expense
+- React.memo optimization
+
+## 🛠️ Tech Stack
+
+- React
+- JavaScript
+- Bootstrap
+- CSS
+- LocalStorage
+
+## 📂 Project Structure
+
+src/
+├── components/
+│   ├── ErrorBoundary.jsx
+│   ├── ExpenseForm.jsx
+│   ├── ExpenseItem.jsx
+│   ├── ExpenseList.jsx
+│   └── ExpenseSummary.jsx
+│
+├── App.jsx
+└── main.jsx
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone Sourabh359

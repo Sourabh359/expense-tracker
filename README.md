@@ -6,19 +6,19 @@ A responsive Expense Tracker built with React and Bootstrap that allows users to
 
 ### 💻 Dashboard
 
-(./screenshots/dashboard.png)
-(./screenshots/expenseDetails.png)
-(./screenshots/filter.png)
-(./screenshots/sorting.png)
+![Dashboard](./screenshots/dashboard.png)
+![Expense Details](./screenshots/expenseDetails.png)
+![Filter](./screenshots/filter.png)
+![Sorting](./screenshots/sorting.png)
 
 ### 🌙 Dark Mode
 
-(./screenshots/darkMode.png)
+![Dark Mode](./screenshots/darkMode.png)
 
 ### 📱 Mobile View
 
-(./screenshots/responsive.png)
-(./screenshots/responsive2.png)
+![Mobile View](./screenshots/responsive.png)
+![Mobile View 2](./screenshots/responsive2.png)
 
 ## 🚀 Features
 

@@ -2,6 +2,10 @@
 
 A responsive Expense Tracker built with React and Bootstrap that allows users to manage and track their daily expenses.
 
+## 🔗 Live Demo
+
+[View Live Project](https://expense-react-project.netlify.app/)
+
 ## 📸 Screenshots
 
 ### 💻 Dashboard

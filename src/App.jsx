@@ -6,9 +6,9 @@ import ExpenseSummary from "./components/ExpenseSummary";
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [darkMode, setDarkMode] = useState(()=>{
-    const savedMode=localStorage.getItem("darkMode");
-    return savedMode==="true";
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true";
   });
 
   const [sortBy, setSortBy] = useState("newest");
@@ -55,9 +55,9 @@ export default function App() {
     }
   }, [darkMode]);
 
-  useEffect(()=>{
-    localStorage.setItem("darkMode",darkMode)
-  },[darkMode])
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode)
+  }, [darkMode])
 
   const filteredExpenses = expenses.filter((expense) =>
     expense.title.toLowerCase().includes(searchTerm.toLowerCase().trim())
@@ -95,7 +95,7 @@ export default function App() {
     <div className={`container mt-5 ${darkMode ? "dark-mode" : ""}`}>
       <h1 className="text-center mb-4">Expense Tracker</h1>
 
-      <button className="btn btn-outline-secondary mb-4" onClick={() => setDarkMode(prev=>!prev)}>
+      <button className="btn btn-outline-secondary mb-4" onClick={() => setDarkMode(prev => !prev)}>
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
 
@@ -105,11 +105,13 @@ export default function App() {
 
       <div className="row g-3 mb-3">
         <div className="col-12 col-md-8">
-        <input type="text" className="form-control" placeholder="Search expenses..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <input type="text" className="form-control" placeholder="Search expenses..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         </div>
 
         <div className="col-12 col-md-4">
-          <select className="form-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <label htmlFor="sortBy" className="visually-hidden">
+            Sort projects</label>
+          <select id="sortBy" className="form-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="newest">Newest First</option>
             <option value="oldest">Oldest First</option>
             <option value="low-high">Amount (Low → High)</option>
